@@ -54,4 +54,9 @@ describe 'validating that a given character appears in exactly one of the given 
     it 'validates that "c" exist in both positions 2 and 9 for "ccccccccc"' do
         expect(valid_string_with_pos?('2-9 c: ccccccccc')).to eq(false)
     end
+
+    it 'works on a large input set' do
+        lines = File.readlines('./spec/fixtures/input2.txt')
+        expect(lines.map{|line| valid_string_with_pos?(line)}.tally).to eq({true => 670, false => 330})
+    end
 end
