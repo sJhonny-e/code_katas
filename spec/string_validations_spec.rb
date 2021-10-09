@@ -18,6 +18,10 @@ describe 'validating that the given character exists within the given range in a
         expect(valid_string?('2-9 c: ccccccccc')).to eq(true)
     end
 
+    it 'validates that "c" exist between 2 and 19 times in "2-9 c: ccccccccc"' do
+        expect(valid_string?('2-19 c: ccccccccc')).to eq(true)
+    end
+
     context 'invalid input' do
         it 'is false if lower bound is larger than upper bound' do
             expect(valid_string?('3-1 b: cdebb')).to eq(false)
