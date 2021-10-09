@@ -22,6 +22,11 @@ describe 'validating that the given character exists within the given range in a
         expect(valid_string?('2-19 c: ccccccccc')).to eq(true)
     end
 
+    it 'works on a large input set' do
+        lines = File.readlines('./spec/fixtures/input2.txt')
+        expect(lines.map{|line| valid_string?(line)}.tally).to eq({true => 666, false => 334})
+    end
+
     context 'invalid input' do
         it 'is false if lower bound is larger than upper bound' do
             expect(valid_string?('3-1 b: cdebb')).to eq(false)
