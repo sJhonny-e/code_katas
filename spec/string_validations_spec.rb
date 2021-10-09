@@ -41,3 +41,9 @@ describe 'validating that the given character exists within the given range in a
         end
     end
 end
+
+describe 'validating that a given character appears in exactly one of the given positions' do
+    it 'validates that "a" exists exactly once in either positions 1 or 3 for "abcde"' do
+        expect(valid_string_with_pos?('1-3 a: abcde')).to eq(true)
+    end
+end
