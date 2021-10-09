@@ -46,4 +46,12 @@ describe 'validating that a given character appears in exactly one of the given 
     it 'validates that "a" exists exactly once in either positions 1 or 3 for "abcde"' do
         expect(valid_string_with_pos?('1-3 a: abcde')).to eq(true)
     end
+
+    it 'validates that "b" doesnt exist in either positions 1 or 3 for "cdefg"' do
+        expect(valid_string_with_pos?('1-3 b: cdefg')).to eq(false)
+    end
+
+    it 'validates that "c" exist in both positions 2 and 9 for "ccccccccc"' do
+        expect(valid_string_with_pos?('2-9 c: ccccccccc')).to eq(false)
+    end
 end

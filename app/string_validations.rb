@@ -17,7 +17,7 @@ def valid_string_with_pos?(str)
     letter_to_find = split_str[0][-1]
     string_to_search = split_str[1]
 
-    positions.any? {|i| string_to_search[i] == letter_to_find}
+    positions.select {|i| string_to_search[i] == letter_to_find}.count == 1
 end
 
 def bounds(str)
