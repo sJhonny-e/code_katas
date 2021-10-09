@@ -16,4 +16,9 @@ describe 'Generating a product of 3 numbers from a list. The numbers are chosen 
     it 'provides the product of  979, 366, and 675, since they sum up to 2020' do
         expect(give_product_three([1721,979, 366, 299, 675, 1456])).to eq(979 * 366 * 675)
     end
+
+    it 'can also detect these 3 numbres from a large list' do
+        numbers = File.readlines('./spec/fixtures/input1.txt').map(&:to_i)
+        expect(give_product_three(numbers)).to eq(13891280)
+    end
 end
