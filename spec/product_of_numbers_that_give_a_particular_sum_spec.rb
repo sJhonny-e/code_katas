@@ -5,4 +5,9 @@ describe 'Generating a product of 2 numbers from a list. The numbers are chosen 
     it 'provides the product of 1721 and 299, since they sum up to 2020' do
         expect(give_product([1721,979, 366, 299, 675, 1456])).to eq(1721 * 299)
     end
+
+    it 'can also detect these 2 numbres from a large list' do
+        numbers = File.readlines('./spec/fixtures/input1.txt').map(&:to_i)
+        expect(give_product(numbers)).to eq(1013211)
+    end
 end
