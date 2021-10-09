@@ -1,5 +1,6 @@
 def valid_string?(str)
     range_strs = str.split('-')
+    return false unless range_strs.length == 2
     lower_bound_str = range_strs[0]
     upper_bound_str = range_strs[1].split.first
     lower_bound = lower_bound_str.to_i

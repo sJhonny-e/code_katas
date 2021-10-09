@@ -30,5 +30,9 @@ describe 'validating that the given character exists within the given range in a
         it 'is false if one of the bounds isnt numeric' do
             expect(valid_string?('a-3 b: bcdefgbb')).to eq(false)
         end
+
+        it 'is false when bounds are not formatted correctly' do
+            expect(valid_string?('1*3 b: cdefgbb')).to eq(false)
+        end
     end
 end
