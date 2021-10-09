@@ -11,3 +11,9 @@ describe 'Generating a product of 2 numbers from a list. The numbers are chosen 
         expect(give_product(numbers)).to eq(1013211)
     end
 end
+
+describe 'Generating a product of 3 numbers from a list. The numbers are chosen for having a specific sum' do
+    it 'provides the product of  979, 366, and 675, since they sum up to 2020' do
+        expect(give_product_three([1721,979, 366, 299, 675, 1456])).to eq(979 * 366 * 675)
+    end
+end
