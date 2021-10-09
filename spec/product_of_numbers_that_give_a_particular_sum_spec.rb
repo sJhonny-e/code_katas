@@ -1,4 +1,5 @@
 require 'rspec'
+require_relative '../app/product_of_numbers_that_give_a_particular_sum'
 
 describe 'Generating a product of 2 numbers from a list. The numbers are chosen for having a specific sum' do
     it 'provides the product of 1721 and 299, since they sum up to 2000' do
